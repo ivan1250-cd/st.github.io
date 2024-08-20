@@ -28,6 +28,9 @@ h1 {
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.8); /* Fondo transparente */
     border-radius: 8px;
+    max-width: 600px; /* Ancho máximo igual al de #result */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 label {
@@ -51,7 +54,7 @@ select, input[type="text"] {
     padding: 20px;
     background-color: white;
     border: 1px solid #ddd;
-    max-width: 600px;
+    max-width: 600px; /* Ancho máximo igual al de #searchContainer */
     margin-left: auto;
     margin-right: auto;
     border-radius: 8px;
@@ -61,14 +64,19 @@ select, input[type="text"] {
 @media screen and (max-width: 768px) {
     #searchContainer {
         flex-direction: column;
-    }
-
-    button {
-        max-width: 100%;
+        max-width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #result {
-        width: 100%;
+        max-width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    button {
+        max-width: 100%;
     }
 }
 
