@@ -14,6 +14,7 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: #f4951f;
 }
 
 /* Estilos para contenedor de búsqueda */
@@ -31,6 +32,7 @@ h1 {
 
 label {
     font-weight: bold;
+    color: rgb(22, 105, 164); /* Aplicación del color */
 }
 
 select, input[type="text"] {
@@ -41,21 +43,6 @@ select, input[type="text"] {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-button {
-    width: 100%;
-    max-width: 150px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
 
 /* Estilos para los resultados */
