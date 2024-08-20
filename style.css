@@ -1,42 +1,56 @@
-* {
-    border: none !important;
-    box-shadow: none !important;
-}
-
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+    line-height: 1.5;
 }
 
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para contenedor de búsqueda */
 #searchContainer {
     display: flex;
-    align-items: center; /* Alinea verticalmente el input y el botón */
-    gap: 10px; /* Espacio entre el input y el botón */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 20px;
-    position: relative; /* Necesario para posicionar correctamente #suggestions */
-    border: none; /* Elimina cualquier borde del contenedor */
-    box-shadow: none; /* Elimina sombras que puedan parecer bordes */
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo transparente */
+    border-radius: 8px;
 }
 
 label {
     font-weight: bold;
 }
 
-input[type="text"] {
-    flex: 1; /* Asegura que el input ocupe el espacio disponible */
+select, input[type="text"] {
+    width: 100%;
+    max-width: 300px;
     padding: 8px;
+    margin-bottom: 10px;
     box-sizing: border-box;
-    border: 1px solid transparent; /* Usa borde transparente si no deseas uno visible */
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 button {
-    padding: 8px 12px;
+    width: 100%;
+    max-width: 150px;
+    padding: 10px;
     background-color: #007bff;
     color: white;
-    border: none; /* Elimina el borde del botón */
-    box-shadow: none; /* Elimina sombras que puedan parecer bordes */
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -44,19 +58,48 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Estilos para los resultados */
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    #searchContainer {
+        flex-direction: column;
+    }
+
+    button {
+        max-width: 100%;
+    }
+
+    #result {
+        width: 100%;
+    }
+}
+
+/* Estilos para sugerencias */
 #suggestions {
     position: absolute;
-    top: 100%; /* Posiciona justo debajo del input */
+    top: calc(100% + 5px);
     left: 0;
     width: 100%;
     background-color: white;
-    border: 1px solid #ddd; /* Verifica si necesitas este borde */
+    border: 1px solid #ddd;
     list-style-type: none;
     padding: 0;
     margin: 0;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    max-height: 150px; /* Opcional: limita la altura máxima para el contenedor de sugerencias */
-    overflow-y: auto; /* Opcional: añade scroll si hay muchas sugerencias */
+    z-index: 1000;
+    max-height: 150px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #suggestions li {
@@ -66,11 +109,4 @@ button:hover {
 
 #suggestions li:hover {
     background-color: #f0f0f0;
-}
-
-#result {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #ddd; /* Verifica si este borde está causando el problema */
 }
