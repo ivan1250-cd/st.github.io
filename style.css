@@ -1,0 +1,76 @@
+* {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+#searchContainer {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el input y el botón */
+    gap: 10px; /* Espacio entre el input y el botón */
+    margin-bottom: 20px;
+    position: relative; /* Necesario para posicionar correctamente #suggestions */
+    border: none; /* Elimina cualquier borde del contenedor */
+    box-shadow: none; /* Elimina sombras que puedan parecer bordes */
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    flex: 1; /* Asegura que el input ocupe el espacio disponible */
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid transparent; /* Usa borde transparente si no deseas uno visible */
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none; /* Elimina el borde del botón */
+    box-shadow: none; /* Elimina sombras que puedan parecer bordes */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#suggestions {
+    position: absolute;
+    top: 100%; /* Posiciona justo debajo del input */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd; /* Verifica si necesitas este borde */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    max-height: 150px; /* Opcional: limita la altura máxima para el contenedor de sugerencias */
+    overflow-y: auto; /* Opcional: añade scroll si hay muchas sugerencias */
+}
+
+#suggestions li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd; /* Verifica si este borde está causando el problema */
+}

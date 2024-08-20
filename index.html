@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Errores de Impresora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Buscador de Errores de Impresora</h1>
+    
+    <div id="searchContainer">
+        <label for="modelSelect">Modelo de Impresora:</label>
+        <select id="modelSelect">
+            <option value="">Seleccione un modelo</option>
+        </select>
+
+        <label for="errorSelect">Código de Error:</label>
+        <select id="errorSelect">
+            <option value="">Seleccione un código de error</option>
+        </select>
+        
+        
+    </div>
+
+    <div id="result">
+        <h2>Detalles del Error</h2>
+        <p><strong>Impresora:</strong> <span id="printerName"></span></p>
+        <p><strong>Error:</strong> <span id="errorName"></span></p>
+        <p><strong>Síntoma:</strong> <span id="symptom"></span></p>
+        <p><strong>Solución:</strong></p>
+        <ul id="solutionList"></ul>
+    </div>
+
+    <!-- Aquí se incluirá el archivo JS que conectará con Firebase -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
